@@ -20,4 +20,4 @@ A lightweight, interactive Python Command Line Interface (CLI) application desig
 2. Clone this repository or download the source file.
 3. Open your terminal/command prompt, navigate to the folder, and run:
    ```bash
-   python main.py
+   python3 main.py
