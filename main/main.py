@@ -1,46 +1,56 @@
-list = ["happy", "rohan", "aditya", "rahul", "sujal"]# A temperory list
-#name check block
-def name_check():
-    while True:
-        name = input("\nEnter your name(or 'q' to back to main menu): ").lower()
-        if not name.replace(" ", "").isalpha():
-            print("Invalid input! Use non-numeric names...")
-            continue
-        if name in list:
-            print("The given name is already present in the list!")
-        elif name == 'q':
-            return
-        else:
-            print("Name is not present in the list")
-#list updating block
-def list_update():
-    while True:
-      name1 = input("\nEnter a name to add or (q to go to main menu): ").lower()
-      if not name1.replace(" ", "").isalpha():
-          print("Invalid input! Use non-numeric names...")
-          continue 
-      if name1 == "q":
-          print("\nreturning to main menu..")
-          return
-      list.append(name1)
-      print(f"{name1} has been added to the list!")
+registry = {
+    "aditya" : 64,
+    "mahima" : 66
+}
+
+
+def update_result():
+          while True:
+           new_name = input('Enter name to update or "(q)" to go back to main menu: ').lower()
+           if new_name == 'q':
+              return
+           if not new_name.replace(" ", "").isalpha():
+            print('Invalid name!, use Non-numeric names...!!')
+
+           try:
+            mark = int(input(f'Enter your marks for {new_name}: '))
+         
+            if 0<= mark <=100:
+                registry[new_name] = mark
+                print(f'Success! {new_name} has been updated with marks, {mark}')
+            else:
+                print('Marks must be between 0 to 100!')
+           except ValueError:
+                print('Invalid input! Please enter a numeric value for marks.')
+#the block that checks the result.
+def check_result():
+ while True:
+    print('\n===== Check you result by Entering your name =====')
+    name = input('\nEnter your name(or press q for main Menu): ').lower()
+    if name == 'q':
+       return
+    if not name.replace(" ", "").isalpha():
+       print('Invalid Name!, Use Non-numeric names!')
+    elif name in registry:
+       print(f"The result of {name} is: {registry[name]}%")
+    else:
+       print('No result found with the given name!')
 #menu block
 def menu():
-    print('\n=================' \
-    ' Welcome To Mark Registry App =================')
     while True:
-        print('\n Menu')
-        print("\n(y) To check, if the name is present in the list or not.")
-        print("(n) To update or add a name in the list.")
-        print("(q) To exit.")
-        choice = (input("Choose: ")).lower()
-        if choice == "y":
-            name_check()
-        elif choice == "n":
-            list_update()
-        elif choice == "q":
-            print("Goodbye!")
-            break
+        print('\n==========Mark Registry App==========')
+        print('(c) to Check the result.')
+        print('(u) to Update the result.')
+        print('(q) to Exit')
+        user_input = input('Choose what to perform[c, u, q]: ').lower()
+        
+        if user_input == 'c':
+           check_result()
+        elif user_input == 'u':
+           update_result()
+        elif user_input == 'q':
+           print('Exiting....')
+           break
         else:
-            print("invalid choice!")
+           print("Invalid choice!")  
 menu()
