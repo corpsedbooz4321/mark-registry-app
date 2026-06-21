@@ -39,7 +39,7 @@ def check_result():
 def menu():
     while True:
         print('\n==========Mark Registry App==========')
-        print('(c) to Check the result.')
+        print('\n(c) to Check the result.')
         print('(u) to Update the result.')
         print('(q) to Exit')
         user_input = input('Choose what to perform[c, u, q]: ').lower()
