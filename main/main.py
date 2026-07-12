@@ -4,8 +4,7 @@ registry = {"aditya": 64, "mahima": 66}
 def update_result():
     while True:
         new_name = input(
-            'Enter name to update or "(q)" to go back to main menu: '
-        ).lower()
+            'Enter name to update or "(q)" to go back to main menu: ').lower()
         if new_name == "q":
             return
         if not new_name.replace(" ", "").isalpha():
