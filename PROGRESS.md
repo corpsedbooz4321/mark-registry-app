@@ -1,58 +1,55 @@
 # 📈 Project Progress Tracker
 
-This document tracks the development milestones of the Student Mark Registry System as it evolves from a simple CLI script into a fully featured open-source web application.
+This document tracks the development milestones of the Mark Registry App as it evolves from a simple CLI utility into a more structured and persistent registry system.
 
 ---
 
 ## 🚦 Quick Overview
 
 - **Current Status:** 🟢 Phase 1 Complete
-- **Next Milestone:** 🟡 Phase 2 (Data Persistence)
+- **Next Milestone:** 🟡 Data Persistence
 - **Target Audience:** Small coaching institutes and independent tutors
 
 ---
 
 ## 🗺️ Milestone Checklist
 
-### 🟢 Phase 1: Interactive CLI Architecture (Completed)
+### 🟢 Phase 1: Modular CLI Architecture (Completed)
 
-- [x] Create core logic to check if a name exists in a list (`name_check`).
-- [x] Create logic to append new names to the data pool (`list_update`).
-- [x] Build a master interactive menu (`menu`) to handle routing.
-- [x] Implement a `while True` loop to keep the program running continuously.
-- [x] **Feature Update:** Added a nested loop inside the update tool to allow batch-adding names smoothly without exiting to the main menu.
-- [x] **UX Update:** Added string formatting (`\n`) for clean spacing and readability in the terminal.
+- [x] Create a CLI entry point in main/main.py.
+- [x] Split the workflow into dedicated modules:
+  - [main/check.py](main/check.py) for result lookup.
+  - [main/update.py](main/update.py) for updating marks.
+  - [main/data.py](main/data.py) for shared registry data.
+- [x] Add a milestone for using a modular file system so logic stays organized and easier to maintain.
+- [x] Support basic input validation for student names and mark values.
+- [x] Allow repeated update operations inside the same session without returning to the main menu.
 
-### 🟡 Phase 2: Local Data Persistence (Up Next)
+### 🟡 Phase 2: Data Persistence (Next)
 
-- [ ] Research Python's built-in `json` module.
-- [ ] Replace the hardcoded list `l = [...]` with a local `students.json` file.
-- [ ] Update `list_update()` to automatically save newly added names to the file.
-- [ ] Update `name_check()` to load up-to-date names from the file every time it runs.
+- [ ] Replace the in-memory registry with a persistent data store.
+- [ ] Save and load data from JSON or SQLite.
+- [ ] Keep the CLI workflow intact while making records durable.
 
-### ⚪ Phase 3: Relational Database Integration
+### ⚪ Phase 3: Expanded Registry Features
 
-- [ ] Migrate from JSON files to an **SQLite** database (built into Python).
-- [ ] Expand the database structure (tables) to hold Student IDs, Subjects, and Exam Marks.
-- [ ] Build basic SQL queries inside Python to add and filter marks.
+- [ ] Add more student details such as subjects, exam dates, or attendance.
+- [ ] Improve the CLI with better formatting and navigation.
+- [ ] Add search and filtering capabilities.
 
-### ⚪ Phase 4: Web Frontend & API Development
+### ⚪ Phase 4: Web or Desktop UI
 
-- [ ] Set up a lightweight **Flask** or **FastAPI** web server.
-- [ ] Convert CLI prompts into backend routing endpoints (e.g., `/add-student`, `/results`).
-- [ ] Create a clean, responsive frontend user interface using HTML and CSS.
-
-### ⚪ Phase 5: Authentication & Public Deployment
-
-- [ ] Add secure user logins (Separate dashboards for Teachers vs. Students).
-- [ ] Deploy the application online for free hosting.
-- [ ] Publish complete setup documentation so any small institute can deploy their own version from GitHub.
+- [ ] Introduce a lightweight web or desktop interface.
+- [ ] Expose the registry through simple API endpoints or a GUI.
+- [ ] Prepare the project for broader use beyond the terminal.
 
 ---
 
 ## 📝 Recent Dev Notes
 
-* **Aha Moment:** Realized functions can be called seamlessly inside other functions (like triggering `menu()` inside `list_update()`) to control terminal flow and handle text spacing beautifully.
+- The project now uses a modular file system rather than keeping all logic in a single script.
+- The current registry still lives in memory, so persistence is the next major milestone.
+- The structure is intentionally simple and beginner-friendly, making it a solid base for future expansion.
 
 ---
-**Last Updated:** June 19, 2026
+**Last Updated:** July 15, 2026
