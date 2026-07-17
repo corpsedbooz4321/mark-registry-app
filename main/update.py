@@ -21,8 +21,8 @@ def update_result():
             mark = int(input(f"Enter your marks for {new_name}: "))
 
             if 0 <= mark <= 100:
-                registry[new_name] = mark
-                print(f"Success!{new_name} results has been added!, {mark}")
+                registry[new_name] = {"subject": subject, "mark": mark}
+                print(f"Success! {new_name} results has been added!, {mark} in {subject}")
             else:
                 print("Marks must be between 0 to 100!")
         except ValueError:
