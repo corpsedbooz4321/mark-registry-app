@@ -1,2 +1,4 @@
-registry = {"aditya": 64, "mahima": 66}
-subject_name = {}
+registry = {
+    "aditya": {"subject": "math", "mark": 64},
+    "mahima": {"subject": "science", "mark": 66},
+}
