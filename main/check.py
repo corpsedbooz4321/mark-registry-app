@@ -1,5 +1,5 @@
 # check.py
-from data import registry
+from data import registry, subject_name
 
 
 def check_result():
@@ -14,6 +14,10 @@ def check_result():
             continue
 
         if name in registry:
-            print(f"The result of {name} is: {registry[name]}%")
+            print(
+                f"Student: {name}",
+                f"Subject: {subject_name}",
+                f"Marks: {mark}",
+            )
         else:
             print("No result found with the given name!")

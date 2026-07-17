@@ -1,6 +1,6 @@
 # update.py
 
-from data import registry, subject_name
+from data import registry
 
 
 def update_result():
@@ -12,17 +12,11 @@ def update_result():
             print("Invalid name!, use Non-numeric names...!!")
 
         try:
-            subject = input("\nEnter the name of the subject: ").lower()
-            subject_name[subject] = subject
-
-            if not subject.replace(" ", "").isalpha():
-                print("Invalid subject!, Use Non-numeric subject names...!")
-
             mark = int(input(f"Enter your marks for {new_name}: "))
 
             if 0 <= mark <= 100:
                 registry[new_name] = mark
-                print(f"Success!{new_name} results has been added!, {mark}")
+                print(f"Success!{new_name} marks added!, {mark}")
             else:
                 print("Marks must be between 0 to 100!")
         except ValueError:
