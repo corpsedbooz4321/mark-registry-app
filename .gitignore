@@ -12,3 +12,7 @@ venv/
 env/
 ENV/
 .DS_Store
+
+# Test files
+/tests/
+/test/
