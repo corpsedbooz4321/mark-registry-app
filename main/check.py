@@ -16,7 +16,9 @@ def check_result():
         if name in registry:
             student_data = registry[name]
             print(f"Student: {name}")
-j            print(f"Subject: {student_data['subject']}")
+            print(f"Subject: {student_data['subject']}")
             print(f"Marks: {student_data['mark']}%")
         else:
             print("No result found with the given name!")
+
+            
