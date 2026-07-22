@@ -22,7 +22,9 @@ def update_result():
 
             if 0 <= mark <= 100:
                 registry[new_name] = {"subject": subject, "mark": mark}
-                print(f"Success! {new_name} results has been added!, {mark} in {subject}")
+                print(
+                    f"Success! {new_name} results has been added!, {mark} in {subject}"
+                )
             else:
                 print("Marks must be between 0 to 100!")
         except ValueError:
