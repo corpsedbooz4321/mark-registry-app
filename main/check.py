@@ -19,6 +19,4 @@ def check_result():
             print(f"Subject: {student_data['subject']}")
             print(f"Marks: {student_data['mark']}%")
         else:
-            print("No result found with the given name!")
-
-            
+            print("No results found with the given name!")
