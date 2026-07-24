@@ -1,4 +1,10 @@
 registry = {
-    "aditya": {"subject": "math", "mark": 64},
-    "mahima": {"subject": "science", "mark": 66},
+    "aditya": {
+        "math": 84,
+        "english": 83,
+    },
+    "mahima": {
+        "science": 65,
+        "hindi": 93,
+    },
 }
