@@ -10,12 +10,15 @@ def update_result():
             return
         if not new_name.replace(" ", "").isalpha():
             print("Invalid name!, use Non-numeric names...!!")
+        if new_name not in registry:
+            registry[new_name] = {}
             continue
 
-        subject = input("\nEnter the name of the subject: ").lower()
-        if not subject.replace(" ", "").isalpha():
-            print("Invalid subject!, Use Non-numeric subject names...!")
-            continue
+        while True:
+            subject = input("\n Enter the name of the subjects: ").lower()
+
+            if subject == "done":
+                break
 
         try:
             mark = int(input(f"Enter your marks for {new_name}: "))
