@@ -17,7 +17,7 @@ def update_result():
         while True:
             subject = input("\nEnter the name of the subjects: ").lower()
             if subject == "done":
-                print("Exiting..")
+                print("Finished..!!")
                 break
             if not subject.replace(" ", "").isalpha():
                 print(f"{subject}, Invalid subject name..")
@@ -28,7 +28,7 @@ def update_result():
                     mark = int(input("Enter marks: "))
 
                 except ValueError:
-                    print("Invalid input")
+                    print("Invalid input, Marks must be a number!!")
                     continue
                 if 0 <= mark <= 100:
                     registry[new_name][subject] = mark
