@@ -12,23 +12,23 @@ def update_result():
             print("Invalid name!, use Non-numeric names...!!")
         if new_name not in registry:
             registry[new_name] = {}
-            continue
 
         while True:
-            subject = input("\n Enter the name of the subjects: ").lower()
-
+            subject = input("\nEnter the name of the subjects: ").lower()
+            if not subject.replace(" ", "").isalpha():
+                print(f"{subject}, Invalid subject name..")
+                continue
             if subject == "done":
                 break
+            try:
+                mark = int(input(f"Enter the marks obtained: "))
+                if 0 <= mark <= 100:
+                    registry[new_name][subject] = mark
 
-        try:
-            mark = int(input(f"Enter your marks for {new_name}: "))
-
-            if 0 <= mark <= 100:
-                registry[new_name] = {"subject": subject, "mark": mark}
-                print(
-                    f"Success! {new_name} results has been added!, {mark} in {subject}"
-                )
-            else:
-                print("Marks must be between 0 to 100!")
-        except ValueError:
-            print("Invalid input! Please enter a numeric value for marks.")
+                    print(
+                        f"Success! {new_name} data has been added!, {mark} in {subject}"
+                    )
+                else:
+                    print("Marks must be between 0 to 100!")
+            except ValueError:
+                print("Invalid input! Please enter a numeric value for marks.")
