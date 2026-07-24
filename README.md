@@ -2,21 +2,31 @@
 
 A lightweight Python CLI application for tracking student marks. The project currently focuses on checking and updating results through a simple terminal menu.
 
-## Current implementation
+## What the app does
 
-The app is organized into a small modular structure under the main directory:
+The current version lets you:
 
-- main/main.py: CLI entry point and menu loop.
-- main/check.py: handles result lookup by student name.
-- main/update.py: handles adding or updating a student's marks.
-- main/data.py: stores the current in-memory registry data.
+- view a student's marks by entering their name
+- add or update marks for a student and subject
+- keep entering records during the same session without returning to the main menu
+- validate names and marks to reduce invalid input
+
+## Project structure
+
+The app is organized into a small modular layout under the main directory:
+
+- main/main.py: CLI entry point and menu loop
+- main/check.py: result lookup by student name
+- main/update.py: add or update marks for a student
+- main/data.py: sample in-memory registry data
+- main/data.json: example JSON data for reference
 
 ## Features
 
-- Menu-driven CLI with options to check results, update results, or exit.
-- Name validation to prevent numeric input.
-- Case-insensitive lookup and update flow.
-- Small modular file layout to separate responsibilities.
+- menu-driven CLI with options to check results, update results, or exit
+- name validation to prevent numeric input
+- case-insensitive lookup and update flow
+- simple modular structure for easier maintenance
 
 ## How to run
 
@@ -33,6 +43,12 @@ cd main
 python3 main.py
 ```
 
-## Project status
+## Current status
 
-The application is still in its early CLI stage. The next major milestone is replacing the in-memory registry with persistent storage such as JSON or SQLite.
+The app is still in an early CLI stage. It uses an in-memory registry defined in main/data.py, and the JSON file is included as an example dataset rather than a fully connected persistence layer yet.
+
+## Planned next steps
+
+- connect the app to persistent storage such as JSON or SQLite
+- add better formatting and search options
+- expand the registry with more student details and reporting features

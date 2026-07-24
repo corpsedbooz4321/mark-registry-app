@@ -1,40 +1,40 @@
 # 📈 Project Progress Tracker
 
-This document tracks the development milestones of the Mark Registry App as it evolves from a simple CLI utility into a more structured and persistent registry system.
+This document tracks the development milestones of the Mark Registry App as it grows from a simple terminal utility into a more structured student record system.
 
 ---
 
 ## 🚦 Quick Overview
 
-- **Current Status:** 🟢 Phase 1 Complete
-- **Next Milestone:** 🟡 Data Persistence
-- **Target Audience:** Small coaching institutes and independent tutors
+- **Current Status:** 🟢 Core CLI workflow complete
+- **Next Milestone:** 🟡 Persistent storage
+- **Target Audience:** small coaching institutes, tutors, and beginner Python learners
 
 ---
 
 ## 🗺️ Milestone Checklist
 
-### 🟢 Phase 1: Modular CLI Architecture (Completed)
+### 🟢 Phase 1: Modular CLI Workflow (Completed)
 
 - [x] Create a CLI entry point in main/main.py.
-- [x] Split the workflow into dedicated modules:
-  - [main/check.py](main/check.py) for result lookup.
-  - [main/update.py](main/update.py) for updating marks.
-  - [main/data.py](main/data.py) for shared registry data.
-- [x] Add a milestone for using a modular file system so logic stays organized and easier to maintain.
-- [x] Support basic input validation for student names and mark values.
+- [x] Split lookup and update actions into dedicated modules:
+  - [main/check.py](main/check.py) for result lookup
+  - [main/update.py](main/update.py) for adding or updating marks
+  - [main/data.py](main/data.py) for shared registry data
+- [x] Add basic input validation for student names and mark values.
 - [x] Allow repeated update operations inside the same session without returning to the main menu.
+- [x] Include example student data to demonstrate the workflow.
 
-### 🟡 Phase 2: Data Persistence (Next)
+### 🟡 Phase 2: Data Persistence (In Progress)
 
 - [ ] Replace the in-memory registry with a persistent data store.
 - [ ] Save and load data from JSON or SQLite.
-- [ ] Keep the CLI workflow intact while making records durable.
+- [ ] Keep the CLI experience intact while making records durable.
 
 ### ⚪ Phase 3: Expanded Registry Features
 
 - [ ] Add more student details such as subjects, exam dates, or attendance.
-- [ ] Improve the CLI with better formatting and navigation.
+- [ ] Improve the CLI with richer formatting and navigation.
 - [ ] Add search and filtering capabilities.
 
 ### ⚪ Phase 4: Web or Desktop UI
@@ -45,11 +45,12 @@ This document tracks the development milestones of the Mark Registry App as it e
 
 ---
 
-## 📝 Recent Dev Notes
+## 📝 Recent Development Notes
 
-- The project now uses a modular file system rather than keeping all logic in a single script.
-- The current registry still lives in memory, so persistence is the next major milestone.
-- The structure is intentionally simple and beginner-friendly, making it a solid base for future expansion.
+- The app now has a basic but functional menu-driven experience for checking and updating marks.
+- The current registry is still stored in memory, so restarting the app will reset the sample dataset.
+- A JSON example file is present for future persistence work and reference.
 
 ---
-**Last Updated:** July 15, 2026
+
+**Last Updated:** July 25, 2026
