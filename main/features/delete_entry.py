@@ -34,7 +34,3 @@ def delete():
             pass
         name = input(f"{YELLOW}Enter your name: {RESET}").lower()
         if name in data[name]:
-
-        
-
-        
