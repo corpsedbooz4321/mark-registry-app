@@ -23,6 +23,7 @@ def check_result():
 
         if name in student_data:
             marks = student_data[name]
+            print(f"{GREEN}Success...{RESET}")
             box_line_downwards()
             print(f" Student: {name.title()}")
             for subject, mark in marks.items():
