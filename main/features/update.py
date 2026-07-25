@@ -1,14 +1,14 @@
 # update.py
 import json
 
-from banner import show_line, update_banner
-from colors import GREEN, MAGENTA, RED, RESET, YELLOW
+from ui.banner import show_line, update_banner
+from ui.colors import GREEN, MAGENTA, RED, RESET, YELLOW
 
 
 def update_result():
     update_banner()
     show_line()
-    with open("data.json") as file:
+    with open("maindata/data.json") as file:
         data = json.load(file)
     while True:
         new_name = input(f"\n{YELLOW}Name to update(or 'q' to menu): {RESET}").lower()
@@ -25,7 +25,7 @@ def update_result():
                 f"\n{YELLOW}Enter the name of the subjects: {RESET}"
             ).lower()
             if subject == "done":
-                with open("data.json", "w") as file:
+                with open("maindata/data.json", "w") as file:
                     json.dump(data, file, indent=2)
                 print("Finished..!!")
                 return

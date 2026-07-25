@@ -1,14 +1,13 @@
 # check.py
 import json
-import re
 
-from banner import (box_line_downwards, box_line_upwards, result_banner,
-                    show_line)
-from colors import GREEN, MAGENTA, RED, RESET, WHITE, YELLOW
+from ui.banner import (box_line_downwards, box_line_upwards, result_banner,
+                       show_line)
+from ui.colors import GREEN, MAGENTA, RED, RESET, WHITE, YELLOW
 
 
 def check_result():
-    with open("data.json") as file:
+    with open("maindata/data.json") as file:
         student_data = json.load(file)
     result_banner()
     show_line()

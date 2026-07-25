@@ -1,8 +1,8 @@
 # main.py
-from banner import show_banner, show_line
-from check import check_result
-from colors import GREEN, RED, RESET, YELLOW
-from update import update_result
+from features.check import check_result
+from features.update import update_result
+from ui.banner import show_banner, show_line
+from ui.colors import GREEN, RED, RESET, YELLOW
 
 show_banner()
 show_line()
@@ -11,7 +11,7 @@ show_line()
 def menu():
     while True:
         print(f"(C) {GREEN}To Check the result.{RESET}")
-        print(f"(A) {GREEN}To list all data.{RESET}")
+        print(f"(A) {GREEN}To list all available data.{RESET}")
         print(f"(U) {GREEN}To Update the result.{RESET}")
         print(f"(Q) {RED}To Exit{RESET}")
         user_input = input(f"{YELLOW}Choose what To perform [c, u, q]: {RESET}").lower()
