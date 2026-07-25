@@ -4,6 +4,7 @@ import re
 
 from banner import (box_line_downwards, box_line_upwards, result_banner,
                     show_line)
+from colors import GREEN, MAGENTA, RED, RESET, WHITE, YELLOW
 
 
 def check_result():
@@ -12,12 +13,12 @@ def check_result():
     result_banner()
     show_line()
     while True:
-        name = input("\nEnter your name(or press q for main Menu): ").lower()
+        name = input(f"\n{YELLOW}Enter your name('q' for main Menu): {RESET}").lower()
         if name == "q":
             return
 
         if not name.replace(" ", "").isalpha():
-            print("Invalid Name!, Use Non-numeric names!")
+            print(f"{RED}Invalid Name!, Use Non-numeric names!{RESET}")
             continue
 
         if name in student_data:
@@ -25,7 +26,7 @@ def check_result():
             box_line_downwards()
             print(f" Student: {name.title()}")
             for subject, mark in marks.items():
-                print(f" {subject.title()}: {mark}%")
+                print(f" {GREEN}{subject.title()}{RESET}: {mark}%")
             box_line_upwards()
         else:
-            print("No results found with the given name!")
+            print(f"{RED}No results found with the given name!{RESET}")
