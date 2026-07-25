@@ -1,14 +1,14 @@
 # 📈 Project Progress Tracker
 
-This document tracks the development milestones of the Mark Registry App as it grows from a simple terminal utility into a more structured student record system.
+This document records the current milestones of the Mark Registry App as it evolves from a simple terminal utility into a small student record system.
 
 ---
 
 ## 🚦 Quick Overview
 
-- **Current Status:** 🟢 Core CLI workflow complete
-- **Next Milestone:** 🟡 Persistent storage
-- **Target Audience:** small coaching institutes, tutors, and beginner Python learners
+- Current status: 🟢 Core CLI workflow is working
+- Next milestone: 🟡 Improve data exploration and reporting features
+- Target audience: small coaching institutes, tutors, and beginner Python learners
 
 ---
 
@@ -21,46 +21,46 @@ This document tracks the development milestones of the Mark Registry App as it g
   - [main/check.py](main/check.py) for result lookup
   - [main/update.py](main/update.py) for adding or updating marks
   - [main/data.json](main/data.json) for shared registry data
-- [x] Add basic input validation for student names and mark values.
-- [x] Allow repeated update operations inside the same session without returning to the main menu.
-- [x] Include example student data to demonstrate the workflow.
+- [x] Add input validation for student names and mark values.
+- [x] Allow multiple subject entries in one update session before saving.
+- [x] Include sample student data to demonstrate the workflow.
 
-### 🟡 Phase 2: Data Persistence (In Progress)
+### 🟢 Phase 2: JSON-Based Persistence (Completed)
 
-- [x] Establish JSON-backed persistence using `main/data.json`.
-- [ ] Improve durability and optional storage formats such as SQLite or CSV.
-- [ ] Keep the CLI experience intact while adding data reliability.
+- [x] Store student records in [main/data.json](main/data.json).
+- [x] Save updates back to the registry file between runs.
+- [x] Keep the CLI experience simple and lightweight.
 
-### ⚪ Phase 3: Expanded Registry Features
+### 🟡 Phase 3: CLI Enhancements (In Progress)
+
+- [ ] Add a proper "list all records" feature from the main menu.
+- [ ] Improve formatting and readability of result output.
+- [ ] Add search and filtering options for larger registries.
+
+### ⚪ Phase 4: Expanded Registry Features
 
 - [ ] Add more student details such as subjects, exam dates, or attendance.
-- [ ] Improve the CLI with richer formatting and navigation.
-- [ ] Add search and filtering capabilities.
+- [ ] Support richer reporting and summaries.
+- [ ] Prepare the project for future UI or web-based access.
 
-### ⚪ Phase 4: Web or Desktop UI
+### ⚪ Phase 5: Advanced Persistence
 
-- [ ] Introduce a lightweight web or desktop interface.
-- [ ] Expose the registry through simple API endpoints or a GUI.
-- [ ] Prepare the project for broader use beyond the terminal.
-
-### ⚪ Phase 5: User Authentication
-
-- [ ] Add CLI user login using Google OAuth.
-- [ ] Protect student registry actions behind authenticated access.
-- [ ] Store and refresh OAuth tokens securely for CLI sessions.
+- [ ] Explore SQLite or CSV as alternative storage formats.
+- [ ] Improve data reliability and backup-friendly workflows.
 
 ---
 
 ## 📝 Recent Development Notes
 
-- The app now has a basic but functional menu-driven experience for checking and updating marks.
-- The current registry is stored in `main/data.json`, so updates persist across runs.
-- The JSON file is used as the active data store and is ready for future persistence work and reference.
+- The app now has a functional menu-driven experience for checking and updating marks.
+- Student data is persisted in [main/data.json](main/data.json), so updates remain available across runs.
+- The current implementation is intentionally simple and focused on the core registry workflow.
+- The menu contains a placeholder option for listing all data, but that feature is not yet implemented.
 
-## Update Log
+## Update log
 
 - Latest update: July 25, 2026
 
 ---
 
-**Last Updated:** July 25, 2026
+**Last updated:** July 25, 2026
