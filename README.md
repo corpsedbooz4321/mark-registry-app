@@ -1,32 +1,35 @@
 # mark-registry-app
 
-A lightweight Python CLI application for tracking student marks using a JSON-backed registry. The project currently focuses on checking and updating results through a simple terminal menu.
+A lightweight Python CLI application for managing a simple student marks registry from the terminal. The project currently focuses on checking existing results and adding or updating marks for students through a menu-driven interface.
 
 ## What the app does
 
 The current version lets you:
 
-- view a student's marks by entering their name
-- add or update marks for a student and subject
-- save updates to `main/data.json`
+- look up a student's marks by entering their name
+- add or update subject marks for a student
+- save changes to the JSON registry file
 - validate names and marks to reduce invalid input
+- enter multiple subjects in one update session before saving
 
 ## Project structure
 
 The app is organized into a small modular layout under the main directory:
 
 - main/main.py: CLI entry point and menu loop
-- main/check.py: result lookup by student name
-- main/update.py: add or update marks for a student
-- main/data.json: JSON-backed student registry
+- main/check.py: result lookup and display for a student
+- main/update.py: add or update marks and persist them to the registry
+- main/banner.py: ASCII banners and terminal separators
+- main/colors.py: color constants for terminal output
+- main/data.json: example JSON-backed student registry
 
 ## Features
 
 - menu-driven CLI with options to check results, update results, or exit
-- name validation to prevent numeric input
+- input validation for student names and marks
 - case-insensitive lookup and update flow
 - JSON persistence for saved student records
-- ability to add multiple subjects before saving changes
+- simple terminal styling for a clearer CLI experience
 
 ## How to run
 
@@ -45,15 +48,22 @@ python3 main.py
 
 ## Current status
 
-The app currently uses `main/data.json` as the registry data store. New and updated marks are written back to the JSON file when the user finishes entering subject scores.
+The core workflow is working:
+
+- the app launches from the terminal
+- student records can be checked and updated
+- updates are written back to main/data.json
+
+There is still room for improvement. The menu includes an option to list all data, but that flow is not implemented yet in the current codebase.
 
 ## Planned next steps
 
-- improve persistent storage with optional SQLite or CSV support
-- add better formatting and search options
-- expand the registry with more student details and reporting features
-- add a clearer save/feedback workflow in the CLI
+- add a proper "list all records" feature
+- improve search and reporting options
+- expand the registry with more student details
+- explore more durable storage formats such as SQLite or CSV
+- improve the CLI experience with clearer feedback and formatting
 
-## Update Log
+## Update log
 
 - Latest update: July 25, 2026
