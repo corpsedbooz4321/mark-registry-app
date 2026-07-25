@@ -1,8 +1,10 @@
 # check.py
-from data import registry
+import json
 
 
 def check_result():
+    with open("data.json") as file:
+        student_data = json.load(file)
     while True:
         print("\n===== Check your result by Entering your name =====")
         name = input("\nEnter your name(or press q for main Menu): ").lower()
@@ -13,10 +15,10 @@ def check_result():
             print("Invalid Name!, Use Non-numeric names!")
             continue
 
-        if name in registry:
-            student_data = registry[name]
+        if name in student_data:
+            marks = student_data[name]
             print(f"\nStudent: {name.title()}")
-            for subject, mark in student_data.items():
+            for subject, mark in marks.items():
                 print(f"{subject.title()}: {mark}%")
         else:
             print("No results found with the given name!")
