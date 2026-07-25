@@ -12,7 +12,7 @@ def print_result(student_data, name):
     box_line_downwards()
     print(f" Student: {name.title()}")
     for subject, mark in marks.items():
-        print(f" {GREEN}{subject.title()}{RESET}: {mark}%")
+        print(f" {GREEN}{subject.title():<10}{RESET}: {MAGENTA}{mark}{RESET}%")
     box_line_upwards()
 
 
