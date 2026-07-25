@@ -25,10 +25,10 @@ def menu():
         elif user_input == "u":
             update_result()  # Calls function inside update.py
         elif user_input == "q":
-            print("Exiting....")
+            print(f"{RED}Exiting....{RESET}")
             break
         else:
-            print("Invalid choice!")
+            print(f"{RED}Invalid choice!{RESET}")
 
 
 if __name__ == "__main__":
