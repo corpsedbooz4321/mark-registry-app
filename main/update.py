@@ -35,6 +35,8 @@ def update_result():
                     continue
                 if 0 <= mark <= 100:
                     data[new_name][subject] = mark
-                    print(f"Success! {new_name}'s data has been added/updated")
+                    print(
+                        f"Success! {new_name}'s data has been added 'done' to save all the changes!"
+                    )
                     break
                 print("\nMarks must be between 0 and 100.")
