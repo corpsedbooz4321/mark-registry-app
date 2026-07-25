@@ -11,6 +11,7 @@ show_line()
 def menu():
     while True:
         print(f"(C) {GREEN}To Check the result.{RESET}")
+        print(f"(A) {GREEN}To list all data.{RESET}")
         print(f"(U) {GREEN}To Update the result.{RESET}")
         print(f"(Q) {RED}To Exit{RESET}")
         user_input = input(f"{YELLOW}Choose what To perform [c, u, q]: {RESET}").lower()
