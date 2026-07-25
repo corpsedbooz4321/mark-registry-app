@@ -1,6 +1,7 @@
 # main.py
 from banner import show_banner, show_line
 from check import check_result
+from colors import GREEN, RED, RESET, YELLOW
 from update import update_result
 
 show_banner()
@@ -9,10 +10,10 @@ show_line()
 
 def menu():
     while True:
-        print("(c) tm Check the result.")
-        print("(u) to Update the result.")
-        print("(q) to Exit")
-        user_input = input("Choose what to perform [c, u, q]: ").lower()
+        print(f"(C) {GREEN}To Check the result.{RESET}")
+        print(f"(U) {GREEN}To Update the result.{RESET}")
+        print(f"(Q) {RED}To Exit{RESET}")
+        user_input = input(f"{YELLOW}Choose what To perform [c, u, q]: {RESET}").lower()
 
         if user_input == "c":
             check_result()  # Calls function inside check.py
