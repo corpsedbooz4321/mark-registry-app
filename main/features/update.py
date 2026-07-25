@@ -5,6 +5,10 @@ from ui.banner import show_line, update_banner
 from ui.colors import GREEN, MAGENTA, RED, RESET, YELLOW
 
 
+def data_preview(data):
+    pass
+
+
 def update_result():
     update_banner()
     show_line()
@@ -17,6 +21,9 @@ def update_result():
         if not new_name.replace(" ", "").isalpha():
             print(f"{RED}Invalid name!, use Non-numeric names...!!{RESET}")
             continue
+        # if new_name in data:
+        #     data_preview(data)
+
         if new_name not in data:
             data[new_name] = {}
 
@@ -24,6 +31,8 @@ def update_result():
             subject = input(
                 f"\n{YELLOW}Enter the name of the subjects: {RESET}"
             ).lower()
+            if subject == "q":
+                return
             if subject == "done":
                 with open("maindata/data.json", "w") as file:
                     json.dump(data, file, indent=2)
