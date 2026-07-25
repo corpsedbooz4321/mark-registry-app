@@ -1,6 +1,8 @@
 # main.py
+
 from features.check import check_result
 from features.update import update_result
+from features.view_all import view_data
 from ui.banner import show_banner, show_line
 from ui.colors import GREEN, RED, RESET, YELLOW
 
@@ -18,6 +20,8 @@ def menu():
 
         if user_input == "c":
             check_result()  # Calls function inside check.py
+        elif user_input == "a":
+            view_data()
         elif user_input == "u":
             update_result()  # Calls function inside update.py
         elif user_input == "q":
