@@ -16,7 +16,7 @@ def menu():
         print(f"(A) {GREEN}To list all available data.{RESET}")
         print(f"(U) {GREEN}To Update the result.{RESET}")
         print(f"(Q) {RED}To Exit{RESET}")
-        user_input = input(f"{YELLOW}Choose what To perform [c, u, q]: {RESET}").lower()
+        user_input = input(f"{YELLOW}Enter your choice[a, c, u, q]: {RESET}").lower()
 
         if user_input == "c":
             check_result()  # Calls function inside check.py
