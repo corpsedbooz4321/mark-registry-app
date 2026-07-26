@@ -17,7 +17,7 @@ def clean_empty_student(data, name):
             if choice == "y":
                 del data[name]
                 print(f"{GREEN}Student {BLUE}{name}{RESET} deleted successfully!!")
-                with open("maindata/data.json", "w") as file:
+                with open("database/data.json", "w") as file:
                     json.dump(data, file, indent=2)
                 return True
             elif choice == "n":
@@ -40,7 +40,7 @@ def display_student(data, name):
 
 def remove():
     show_line(2)
-    with open("maindata/data.json") as file:
+    with open("database/data.json") as file:
         data = json.load(file)
     while True:
         name = input(f"\n{YELLOW}Enter your name: {RESET}")
@@ -63,7 +63,7 @@ def remove():
             if subject_removal == "q":
                 return
             if subject_removal == "done":
-                with open("maindata/data.json", "w") as file:
+                with open("database/data.json", "w") as file:
                     json.dump(data, file, indent=2)
                 print(f"{GREEN}Changes saved successfully!!{RESET}")
                 # display_student(data, name)

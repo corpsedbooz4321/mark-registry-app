@@ -9,7 +9,7 @@ from ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
 def update_result():
     # update_banner()
     show_line()
-    with open("maindata/data.json") as file:
+    with open("database/data.json") as file:
         data = json.load(file)
     while True:
         name = input(f"\n{YELLOW}Name to update(or 'q' to menu): {RESET}").lower()
@@ -32,7 +32,7 @@ def update_result():
             if subject == "q":
                 return
             if subject == "done":
-                with open("maindata/data.json", "w") as file:
+                with open("database/data.json", "w") as file:
                     json.dump(data, file, indent=2)
                 print("Finished..!!")
                 return

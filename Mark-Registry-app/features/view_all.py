@@ -5,7 +5,7 @@ from ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
 
 
 def view_data():
-    with open("maindata/data.json") as file:
+    with open("database/data.json") as file:
         data = json.load(file)
     for name in data:
         box_line_downwards()
