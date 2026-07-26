@@ -19,7 +19,7 @@ def print_result(student_data, name):
 def check_result():
     with open("maindata/data.json") as file:
         student_data = json.load(file)
-    result_banner()
+    # result_banner()
     show_line()
     while True:
         name = input(f"\n{YELLOW}Enter your name('q' for main Menu): {RESET}").lower()
