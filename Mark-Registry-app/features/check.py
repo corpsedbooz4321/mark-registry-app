@@ -20,10 +20,16 @@ def print_result(student_data, name):
     box_line_upwards()
     box_line_downwards()
     average = calculate_average(marks)
-    print("Statictics".center(40))
     avg = "Average"
     col = ":"
-    print(f"  {GREEN}{avg:<17}{RESET}{col.center(1)}{MAGENTA}{average:>17}{RESET}%")
+    print("Statictics".center(40))
+    if 100 >= average >= 80:
+        print(f"  {GREEN}{avg:<17}{RESET}{col.center(1)}{GREEN}{average:>17}{RESET}%")
+        return
+    elif 80 > average >= 30:
+        print(f"  {GREEN}{avg:<17}{RESET}{col.center(1)}{YELLOW}{average:>17}{RESET}%")
+    else:
+        print(f"  {GREEN}{avg:<17}{RESET}{col.center(1)}{RED}{average:>17}{RESET}%")
     box_line_upwards()
 
 
