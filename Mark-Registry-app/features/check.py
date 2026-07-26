@@ -17,7 +17,7 @@ def print_result(student_data, name):
 
 
 def check_result():
-    with open("maindata/data.json") as file:
+    with open("database/data.json") as file:
         student_data = json.load(file)
     # result_banner()
     show_line()
