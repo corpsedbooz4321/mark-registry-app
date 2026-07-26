@@ -5,10 +5,6 @@ from ui.banner import show_line, update_banner
 from ui.colors import GREEN, MAGENTA, RED, RESET, YELLOW
 
 
-def data_preview(data):
-    pass
-
-
 def update_result():
     # update_banner()
     show_line()
