@@ -4,7 +4,7 @@ from features.check import check_result
 from features.delete_entry import remove
 from features.update import update_result
 from features.view_all import view_data
-from ui.banner import show_banner, show_line
+from ui.banner import big_line, show_banner, show_line
 from ui.colors import GREEN, RED, RESET, YELLOW
 
 show_banner()
@@ -13,10 +13,10 @@ show_line()
 
 def menu():
     while True:
-        print(f"(C) {GREEN}To Check the result.{RESET}")
         print(f"(A) {GREEN}To list all available data.{RESET}")
-        print(f"(U) {GREEN}To Update the result.{RESET}")
+        print(f"(C) {GREEN}To Check the result.{RESET}")
         print(f"(D) {GREEN}To Remove a entry.{RESET}")
+        print(f"(U) {GREEN}To Update the result.{RESET}")
         print(f"(Q) {RED}To Exit{RESET}")
         user_input = input(f"{YELLOW}Enter your choice[a, c, d, u, q]: {RESET}").lower()
 
@@ -29,7 +29,7 @@ def menu():
         elif user_input == "u":
             update_result()  # Calls function inside update.py
         elif user_input == "q":
-            print(f"{RED}Exiting....{RESET}")
+            print(f"\n{RED}Exiting....{RESET}")
             break
         else:
             print(f"{RED}Invalid choice!{RESET}")
