@@ -10,7 +10,7 @@ def data_preview(data):
 
 
 def update_result():
-    update_banner()
+    # update_banner()
     show_line()
     with open("maindata/data.json") as file:
         data = json.load(file)
