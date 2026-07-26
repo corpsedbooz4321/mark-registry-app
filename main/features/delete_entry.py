@@ -6,8 +6,8 @@ from ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
 
 
 def clean_empty_student(data, name):
-    if len(data[name]) == 0:
-        print(f"{MAGENTA}{name}{RESET} {RED}has no data left.")
+    if not (data[name]):
+        print(f"\n{MAGENTA}{name}{RESET} {RED}has no data left.")
         while True:
             choice = (
                 input(f"{RED}Delete{RESET} the student as well? (y/n): ")
@@ -30,9 +30,11 @@ def clean_empty_student(data, name):
 def display_student(data, name):
     if name in data:
         box_line_downwards()
-        print(f" {GREEN}Student{RESET} : {BLUE}{name}{RESET}")
+        print(f" {GREEN}Student{RESET}   :{BLUE}{name}{RESET}")
         for subject in data[name]:
-            print(f" {YELLOW}{subject}{RESET}: {MAGENTA}{data[name][subject]}{RESET}")
+            print(
+                f" {YELLOW}{subject:<10}{RESET}: {MAGENTA}{data[name][subject]}{RESET}"
+            )
         box_line_upwards()
 
 
@@ -41,9 +43,8 @@ def remove():
     with open("maindata/data.json") as file:
         data = json.load(file)
     while True:
-        name = input(f"{YELLOW}Enter your name: {RESET}")
+        name = input(f"\n{YELLOW}Enter your name: {RESET}")
         if name in data:
-            display_student(data, name)
             if clean_empty_student(data, name):
                 continue
 
@@ -75,8 +76,9 @@ def remove():
                 del data[name][subject_removal]
 
                 print(
-                    f"{GREEN}Removal of the {subject_removal} from {name} finished! '{RED}done{RESET}' to save! '{RED}q{RESET}' to discard.."
+                    f"\n{GREEN}Removal of the {subject_removal} from {name} finished! '{RED}done{RESET}' to save! '{RED}q{RESET}' to discard.."
                 )
+                print(f"{BLUE}Preview")
                 display_student(data, name)
                 clean_empty_student(data, name)
             else:
