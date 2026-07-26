@@ -9,16 +9,22 @@ def clean_empty_student(data, name):
     if len(data[name]) == 0:
         print(f"{MAGENTA}{name}{RESET} {RED}has no data left.")
         while True:
-            choice = input(f"{RED}Delete{RESET} the student as well? (y/n): ").lower()
+            choice = (
+                input(f"{RED}Delete{RESET} the student as well? (y/n): ")
+                .strip()
+                .lower()
+            )
             if choice == "y":
                 del data[name]
                 print(f"{GREEN}Student {BLUE}{name}{RESET} deleted successfully!!")
                 with open("maindata/data.json", "w") as file:
                     json.dump(data, file, indent=2)
-                display_student(data, name)
-                return
+                return True
             elif choice == "n":
-                break
+                return True
+            else:
+                print(f"{RED}Choose from above options!!")
+    return False
 
 
 def display_student(data, name):
@@ -34,35 +40,46 @@ def remove():
     show_line(2)
     with open("maindata/data.json") as file:
         data = json.load(file)
-    name = input(f"{YELLOW}Enter your name: {RESET}")
-    if name not in data:
-        print(f"{RED}The name {name} not found!!{RESET}")
-        return
-    display_student(data, name)
     while True:
-        subject_removal = input(
-            f"{YELLOW}\nEnter the name of the subject: {RESET}"
-        ).lower()
-        if subject_removal == "q":
-            return
-        if subject_removal == "done":
-            with open("maindata/data.json", "w") as file:
-                json.dump(data, file, indent=2)
-            print(f"{GREEN}\nChanges saved successfully!!{RESET}")
-            # display_student(data, name)
-            return
-        if not subject_removal.replace(" ", "").isalpha():
-            print(f"{RED}Invalid name!, use Non-numeric names..!!{RESET}")
-            continue
-
-        if subject_removal in data[name]:
-            del data[name][subject_removal]
-            print(
-                f"{GREEN}Removal of the {subject_removal} from {name} finished! '{RED}done{RESET}' to save! '{RED}q{RESET}' to discard.."
-            )
+        name = input(f"{YELLOW}Enter your name: {RESET}")
+        if name in data:
             display_student(data, name)
+            if clean_empty_student(data, name):
+                continue
 
+        elif name == "q":
+            return
+        elif name not in data:
+            print(f"{RED}The name {name} not found!!{RESET}")
+            continue
+        display_student(data, name)
+        while True:
+            subject_removal = (
+                input(f"{YELLOW}\nEnter the name of the subject: {RESET}")
+                .strip()
+                .lower()
+            )
+            if subject_removal == "q":
+                return
+            if subject_removal == "done":
+                with open("maindata/data.json", "w") as file:
+                    json.dump(data, file, indent=2)
+                print(f"{GREEN}Changes saved successfully!!{RESET}")
+                # display_student(data, name)
+                return
+            if not subject_removal.replace(" ", "").isalpha():
+                print(f"{RED}Invalid name!, use Non-numeric names..!!{RESET}")
+                continue
+
+            if subject_removal in data[name]:
+                del data[name][subject_removal]
+
+                print(
+                    f"{GREEN}Removal of the {subject_removal} from {name} finished! '{RED}done{RESET}' to save! '{RED}q{RESET}' to discard.."
+                )
+                display_student(data, name)
+                clean_empty_student(data, name)
+            else:
+                print(f"{RED}Subject {subject_removal} not found!{RESET}")
         else:
-            print(f"{RED}Subject {subject_removal} not found!{RESET}")
-    else:
-        print(f"{RED}The name {name} not found!!{RESET}")
+            print(f"{RED}The name {name} not found!!{RESET}")
