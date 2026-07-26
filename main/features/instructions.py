@@ -1,7 +1,10 @@
+from ui.banner import show_line
 from ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
 
 
 def instruction():
+    show_line()
+    show_line()
     print(f"\n{MAGENTA}=== Mark Registry App Help ==={RESET}")
     print(f"{YELLOW}How to start the app:{RESET}")
     print("  From the project root: python3 main/main.py")
@@ -18,7 +21,9 @@ def instruction():
     print(f"  {GREEN}(U){RESET} Update or add marks for a student")
     print(f"    -> handled in {BLUE}main/features/update.py{RESET} -> update_result()")
     print(f"  {GREEN}(H){RESET} Show this help screen")
-    print(f"    -> handled in {BLUE}main/features/instructions.py{RESET} -> instruction()")
+    print(
+        f"    -> handled in {BLUE}main/features/instructions.py{RESET} -> instruction()"
+    )
     print(f"  {RED}(Q){RESET} Exit the application")
     print()
 
@@ -51,6 +56,8 @@ def instruction():
 
     print(f"{YELLOW}Where the commands are connected:{RESET}")
     print("  - The menu loop is in main/main.py")
-    print("  - Each letter choice calls a feature function from the main/features folder")
+    print(
+        "  - Each letter choice calls a feature function from the main/features folder"
+    )
     print("  - The app uses the UI colors and banner helpers from main/ui")
     print()
