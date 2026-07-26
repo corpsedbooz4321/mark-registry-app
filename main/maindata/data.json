@@ -1,23 +1,8 @@
 {
-  "adiyta": {
-    "math": 89,
-    "english": 10,
-    "hindi": 20,
-    "dont": 88
-  },
-  "mahima": {
-    "math": 99
-  },
-  "ankit": {
-    "laudalahsoon": 100
-  },
   "aadi": {
     "math": 48
   },
   "aditya": {
-    "math": 49,
-    "englilsh": 48,
-    "hindi": 30,
     "science": 79
   }
 }
