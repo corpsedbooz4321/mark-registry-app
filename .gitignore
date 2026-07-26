@@ -16,3 +16,6 @@ ENV/
 # Test files
 /tests/
 /test/
+
+# Runtime data
+main/maindata/data.json
