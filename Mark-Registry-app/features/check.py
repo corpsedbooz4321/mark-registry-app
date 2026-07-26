@@ -4,15 +4,26 @@ import json
 from ui.banner import (box_line_downwards, box_line_upwards, result_banner,
                        show_line)
 from ui.colors import GREEN, MAGENTA, RED, RESET, WHITE, YELLOW
+from utils.average import calculate_average
 
 
 def print_result(student_data, name):
     marks = student_data[name]
     print(f"{GREEN}Success...{RESET}")
     box_line_downwards()
-    print(f" Student: {name.title()}")
+    print(f"{name.title():^40}")
     for subject, mark in marks.items():
-        print(f" {GREEN}{subject.title():<10}{RESET}: {MAGENTA}{mark}{RESET}%")
+        col = ":"
+        print(
+            f"  {GREEN}{subject.title():<17}{RESET}{col.center(1)} {MAGENTA}{mark:>15}{RESET}%"
+        )
+    box_line_upwards()
+    box_line_downwards()
+    average = calculate_average(marks)
+    print("Statictics".center(40))
+    avg = "Average"
+    col = ":"
+    print(f"  {GREEN}{avg:<17}{RESET}{col.center(1)}{MAGENTA}{average:>17}{RESET}%")
     box_line_upwards()
 
 
