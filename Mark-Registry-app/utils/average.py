@@ -2,4 +2,9 @@
 
 
 def calculate_average(marks):
-    return sum(marks.values()) / len(marks)
+    try:
+        avg = sum(marks.values()) / len(marks)
+    except ZeroDivisionError:
+        avg = 0
+
+    return avg
