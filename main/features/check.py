@@ -6,10 +6,20 @@ from ui.banner import (box_line_downwards, box_line_upwards, result_banner,
 from ui.colors import GREEN, MAGENTA, RED, RESET, WHITE, YELLOW
 
 
+def print_result(student_data, name):
+    marks = student_data[name]
+    print(f"{GREEN}Success...{RESET}")
+    box_line_downwards()
+    print(f" Student: {name.title()}")
+    for subject, mark in marks.items():
+        print(f" {GREEN}{subject.title():<10}{RESET}: {MAGENTA}{mark}{RESET}%")
+    box_line_upwards()
+
+
 def check_result():
     with open("maindata/data.json") as file:
         student_data = json.load(file)
-    result_banner()
+    # result_banner()
     show_line()
     while True:
         name = input(f"\n{YELLOW}Enter your name('q' for main Menu): {RESET}").lower()
@@ -21,12 +31,6 @@ def check_result():
             continue
 
         if name in student_data:
-            marks = student_data[name]
-            print(f"{GREEN}Success...{RESET}")
-            box_line_downwards()
-            print(f" Student: {name.title()}")
-            for subject, mark in marks.items():
-                print(f" {GREEN}{subject.title()}{RESET}: {mark}%")
-            box_line_upwards()
+            print_result(student_data, name)
         else:
             print(f"{RED}No results found with the given name!{RESET}")
