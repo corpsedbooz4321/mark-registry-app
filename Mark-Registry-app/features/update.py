@@ -27,14 +27,14 @@ def update_result():
 
         while True:
             subject = input(
-                f"\n{YELLOW}Enter the name of the subjects: {RESET}"
+                f"\n{YELLOW}Enter the name of the subjects or (done/q): {RESET}"
             ).lower()
             if subject == "q":
                 return
             if subject == "done":
                 with open("database/data.json", "w") as file:
                     json.dump(data, file, indent=2)
-                print("Finished..!!")
+                print(f"{GREEN}Finished..!!")
                 return
             if not subject.replace(" ", "").isalpha():
                 print(f"{subject}, {RED}Invalid subject name..{RESET}")

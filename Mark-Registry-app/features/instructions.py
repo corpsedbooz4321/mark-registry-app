@@ -61,7 +61,9 @@ def instruction():
     print("    - Shows every saved student and their subjects/marks.")
 
     print(f"{YELLOW}Where the data is stored:{RESET}")
-    print(f"  {BLUE}Mark-Registry-App/database/data.json{RESET}")
+
+    print(f"  {BLUE}main/database/data.json{RESET}")
+
     print("  All changes are saved into this JSON file.")
 
     print(f"{YELLOW}Where the commands are connected:{RESET}")
