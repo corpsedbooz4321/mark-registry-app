@@ -56,7 +56,7 @@ def remove():
         display_student(data, name)
         while True:
             subject_removal = (
-                input(f"{YELLOW}\nEnter the name of the subject (done/q): {RESET}")
+                input(f"{YELLOW}\nEnter the name of the subject ({RED}done/q{RESET}): {RESET}")
                 .strip()
                 .lower()
             )
