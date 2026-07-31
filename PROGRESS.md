@@ -1,78 +1,114 @@
 # 📈 Project Progress Tracker
 
-This document records the current milestones of the Mark Registry App as it evolves from a simple terminal utility into a small student record system.
+## 🚦 Current Status
+
+- Current development stage: Early-stage but functional CLI application
+- Current stable release: Latest public release observed is v1.0.1
+- Development branch status: Active repository branch is main
+- Overall completion summary: The core student mark registry workflow is implemented and working, with persistent JSON storage and a menu-based terminal interface
 
 ---
 
-## 🚦 Quick Overview
+## 🗺️ Roadmap
 
-- Current status: 🟢 Core CLI workflow is working
-- Next milestone: 🟡 Improve data exploration and reporting features
-- Target audience: small coaching institutes, tutors, and beginner Python learners
+### ✅ Phase 1 — Initial CLI
 
----
+- [x] Create a terminal-based entry point with a main menu
+- [x] Add a help screen for app usage
+- [x] Provide a simple, color-enhanced terminal interface
 
-## 🗺️ Milestone Checklist
+### ✅ Phase 2 — Registry Features
 
-### 🟢 Phase 1: Modular CLI Workflow (Completed)
+- [x] Add student lookup by name
+- [x] Add/update marks for a student
+- [x] Delete student entries
+- [x] Remove individual subjects from a student record
+- [x] View all stored student data
+- [x] Calculate averages and display basic statistics
+- [x] Validate names and marks before saving
 
-- [x] Create a CLI entry point in main/main.py.
-- [x] Split lookup and update actions into dedicated modules:
-  - [main/check.py](main/check.py) for result lookup
-  - [main/update.py](main/update.py) for adding or updating marks
-  - [main/data.json](main/data.json) for shared registry data
-- [x] Add input validation for student names and mark values.
-- [x] Allow multiple subject entries in one update session before saving.
-- [x] Include sample student data to demonstrate the workflow.
+### 🟡 Phase 3 — CLI Polish
 
-### 🟢 Phase 2: JSON-Based Persistence (Completed)
+- [x] Improve the user experience with formatted output and banners
+- [ ] Improve readability for larger datasets and longer result lists
+- [ ] Add stronger search and filtering capabilities
 
-- [x] Store student records in [main/data.json](main/data.json).
-- [x] Save updates back to the registry file between runs.
-- [x] Keep the CLI experience simple and lightweight.
+### ⚪ Phase 4 — Data Management
 
-### 🟡 Phase 3: CLI Enhancements (In Progress)
+- [ ] Add CSV or spreadsheet-friendly export support
+- [ ] Explore a more robust storage backend such as SQLite
 
-- [ ] Add a proper "list all records" feature from the main menu.
-- [ ] Improve formatting and readability of result output.
-- [ ] Add search and filtering options for larger registries.
+### ⚪ Phase 5 — Web Application
 
-### ⚪ Phase 4: Expanded Registry Features
-
-- [ ] Add more student details such as subjects, exam dates, or attendance.
-- [ ] Support richer reporting and summaries.
-- [ ] Prepare the project for future UI or web-based access.
-
-### ⚪ Phase 5: Advanced Persistence
-
-- [ ] Explore SQLite or CSV as alternative storage formats.
-- [ ] Improve data reliability and backup-friendly workflows.
+- [ ] Build a web-based or API-based version of the registry
+- [ ] Expand the system into a fuller student management platform
 
 ---
 
-## 📝 Recent Development Notes
+## 📦 Current Features
 
-- The app now has a functional menu-driven experience for checking and updating marks.
-- Student data is persisted in [main/data.json](main/data.json), so updates remain available across runs.
-- The current implementation is intentionally simple and focused on the core registry workflow.
-- The menu contains a placeholder option for listing all data, but that feature is not yet implemented.
-
-## Update log
-
-- Latest update: July 25, 2026
+- Student lookup by name
+- Add or update subject marks
+- Delete entire student records
+- Remove individual subjects from a record
+- View all saved student data
+- Calculate average marks for a student
+- Show basic result statistics in the terminal
+- Help menu and CLI instructions
+- JSON-based persistence
+- Input validation for names and marks
+- Modular Python architecture
 
 ---
 
-**Last Updated:** July 25, 2026
+## 🏗 Project Architecture
 
-## Versioning
+The project is organized as a lightweight modular Python CLI application:
 
-The following is a draft timeline of major releases inferred from the repository commit history. Minor or fix commits are intentionally omitted — only commits that introduced new features, refactors, or notable UX changes are listed. Please review and suggest any changes or tags you prefer.
+- features/ contains the app’s main actions: student lookup, updates, deletion, viewing, and help output
+- ui/ contains banner and color helpers for terminal presentation
+- utils/ contains reusable helper logic such as average calculation
+- database/ contains the JSON storage file used to persist student records
 
-- **v1.0.0** — Initial release: project scaffolding, basic CLI workflow, and README. (notable commits: `44ed2be`, `f0e617a`)
-- **v1.1.0** — Core features and UI: added JSON-backed persistence (`main/maindata/data.json`), `check`/`update`/`view_all` features, banner and color helpers. (notable commits: `ade2b39`, `8b6ad74`, `4a958be`, `1049a8c`, `81b9bdc`)
-- **v1.2.0** — Data refactor: replaced in-memory registry with JSON data handling and updated progress/README to reflect persistence changes. (notable commits: `c5a991a`, `6e482b4`, `6415438`)
-- **v1.3.0** — Delete entry feature and menu improvements: implemented `delete_entry` functionality and related menu options. (notable commits: `5be40e1`, `a31aa68`, `479cd8a`)
-- **v1.4.0** — UX polish and help: banner formatting improvements, color/formatting tweaks, and help/instructions added. (notable commits: `c53b958`, `0e61840`, `c8512f0`)
+The entry point is the main script in the repository root folder, which wires the menu options to the feature modules.
 
-_Note:_ These version labels were inferred automatically from commit messages and file additions/changes. If you already have a different version mapping or want me to tag specific commits with release tags, tell me which commits correspond to which version and I will update this section accordingly.
+---
+
+## 📊 Current Statistics
+
+- Feature modules: 5
+- Utility modules: 1
+- UI modules: 2
+- Storage backend: JSON file
+- Primary language: Python
+- Current release: v1.0.1
+- Documentation files: README.md, PROGRESS.md
+- Test suite: Not present in the repository
+
+---
+
+## 🚀 Future Plans
+
+Based on the current project direction and the existing CLI workflow, the most likely next steps are:
+
+- Improve reporting and result formatting for larger registries
+- Add search and filtering for student records
+- Support exporting records to CSV or spreadsheet-friendly formats
+- Migrate from JSON storage to a more structured database system such as SQLite
+- Develop a web-based interface or API while preserving the terminal tool
+
+---
+
+## 📝 Recent Milestones
+
+- Built a working menu-driven CLI application for student mark management
+- Added persistent storage so records remain available across runs
+- Implemented lookup, update, delete, and view-all workflows
+- Added average-based statistics and input validation
+- Introduced a cleaner terminal experience with banners and colored output
+
+---
+
+## 📅 Last Updated
+
+July 31, 2026

@@ -1,69 +1,56 @@
 # mark-registry-app
 
-A lightweight Python CLI application for managing a simple student marks registry from the terminal. The project currently focuses on checking existing results and adding or updating marks for students through a menu-driven interface.
+## What is the project?
 
-## What the app does
+Mark Registry App is a lightweight Python command-line application for managing student marks from the terminal. It is designed for small coaching setups, tutoring environments, or learning projects that need a simple registry without the overhead of a full web app.
 
-The current version lets you:
-
-- look up a student's marks by entering their name
-- add or update subject marks for a student
-- save changes to the JSON registry file
-- validate names and marks to reduce invalid input
-- enter multiple subjects in one update session before saving
-
-## Project structure
-
-The app is organized into a small modular layout under the main directory:
-
-- main/main.py: CLI entry point and menu loop
-- main/check.py: result lookup and display for a student
-- main/update.py: add or update marks and persist them to the registry
-- main/banner.py: ASCII banners and terminal separators
-- main/colors.py: color constants for terminal output
-- main/data.json: example JSON-backed student registry
+The current version supports checking student results, updating marks, removing entries, viewing all saved data, and persisting records in a JSON file.
 
 ## Features
 
-- menu-driven CLI with options to check results, update results, or exit
-- input validation for student names and marks
-- case-insensitive lookup and update flow
-- JSON persistence for saved student records
-- simple terminal styling for a clearer CLI experience
+- Menu-driven CLI for checking, updating, removing, and viewing records
+- Input validation for student names and mark values
+- Case-insensitive lookup and update flow
+- JSON-based persistence for saved records
+- Average calculation for student results
+- Colored terminal output and simple on-screen formatting
 
-## How to run
+## Installation
 
-From the repository root:
+Requirements:
+
+- Python 3.8 or newer
+
+From the repository root, run:
 
 ```bash
-python3 main/main.py
+python3 Mark-Registry-app/main.py
 ```
 
-Or from the main directory:
+If you prefer to work from inside the app folder, run:
 
 ```bash
-cd main
+cd Mark-Registry-app
 python3 main.py
 ```
 
-## Current status
+No extra packages are required for the current version.
 
-The core workflow is working:
+## Usage
 
-- the app launches from the terminal
-- student records can be checked and updated
-- updates are written back to main/data.json
+When the app starts, you will see a menu with options such as:
 
-There is still room for improvement. The menu includes an option to list all data, but that flow is not implemented yet in the current codebase.
+- A: View all saved student data
+- C: Check a student's result
+- D: Remove an entry
+- U: Update or add marks
+- H: Show help
+- Q: Exit the application
 
-## Planned next steps
+Data is stored in:
 
-- add a proper "list all records" feature
-- improve search and reporting options
-- expand the registry with more student details
-- explore more durable storage formats such as SQLite or CSV
-- improve the CLI experience with clearer feedback and formatting
+```text
+Mark-Registry-app/database/data.json
+```
 
-## Update log
-
-- Latest update: July 25, 2026
+Use the menu prompts to add or update marks, then save changes when prompted.
