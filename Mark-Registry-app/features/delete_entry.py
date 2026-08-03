@@ -80,7 +80,7 @@ def remove():
                 print(
                     f"\n{GREEN}Removal of the {subject_removal} from {name} finished! '{RED}done{RESET}' to save! '{RED}q{RESET}' to discard.."
                 )
-                print(f"{BLUE}Preview")
+                print(f"{BLUE}Preview{RESET}")
                 display_student(data, name)
                 clean_empty_student(data, name)
             else:
