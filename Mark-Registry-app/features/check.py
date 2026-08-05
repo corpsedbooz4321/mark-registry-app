@@ -1,8 +1,7 @@
 # check.py
 import json
 
-from ui.banner import (box_line_downwards, box_line_upwards, result_banner,
-                       show_line)
+from ui.banner import box_line_downwards, box_line_upwards, show_line
 from ui.colors import GREEN, MAGENTA, RED, RESET, YELLOW
 from utils.average import calculate_average
 
