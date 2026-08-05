@@ -85,5 +85,6 @@ def remove():
                 clean_empty_student(data, name)
             else:
                 print(f"{RED}Subject {subject_removal} not found!{RESET}")
+                break
         else:
             print(f"{RED}The name {name} not found!!{RESET}")
