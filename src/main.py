@@ -14,9 +14,9 @@ show_line()
 def menu():
     while True:
         print(f"(A) {GREEN}To list all available data.{RESET}")
-        print(f"(C) {GREEN}To Check the result.{RESET}")
-        print(f"(D) {GREEN}To Remove a entry.{RESET}")
-        print(f"(U) {GREEN}To Update the result.{RESET}")
+        print(f"(C) {GREEN}To Check the result's.{RESET}")
+        print(f"(D) {GREEN}To Delete Registry's.{RESET}")
+        print(f"(U) {GREEN}To Update Registry's.{RESET}")
         print(f"(Q) {RED}To Exit{RESET}")
         print(f"(H) {GREEN}Help?")
         user_input = input(
