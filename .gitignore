@@ -18,5 +18,4 @@ ENV/
 /test/
 
 # Runtime data
-/database/data.json
-main/maindata/data.json
+src/database/data.json
