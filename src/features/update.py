@@ -1,15 +1,16 @@
 # update.py
 import json
 
-from features.delete_entry import display_student
-from ui.banner import show_line, update_banner
-from ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
+from src.features.delete_entry import display_student
+from src.helper.database import DATA_FILE
+from src.ui.banner import show_line, update_banner
+from src.ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
 
 
 def update_result():
     # update_banner()
     show_line()
-    with open("database/data.json") as file:
+    with DATA_FILE.open() as file:
         data = json.load(file)
     while True:
         name = input(f"\n{YELLOW}Name to update(or 'q' to menu): {RESET}").lower()
@@ -32,7 +33,7 @@ def update_result():
             if subject == "q":
                 return
             if subject == "done":
-                with open("database/data.json", "w") as file:
+                with DATA_FILE.open("w") as file:
                     json.dump(data, file, indent=2)
                 print(f"{GREEN}Finished..!!")
                 return

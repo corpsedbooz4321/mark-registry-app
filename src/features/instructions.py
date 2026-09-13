@@ -1,5 +1,5 @@
-from ui.banner import show_line
-from ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
+from src.ui.banner import show_line
+from src.ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
 
 
 def instruction():
@@ -62,7 +62,7 @@ def instruction():
 
     print(f"{YELLOW}Where the data is stored:{RESET}")
 
-    print(f"  {BLUE}main/database/data.json{RESET}")
+    print(f"  {BLUE}src/database/data.json{RESET}")
 
     print("  All changes are saved into this JSON file.")
 

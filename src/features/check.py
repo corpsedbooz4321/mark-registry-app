@@ -1,10 +1,10 @@
 # check.py
 import json
 
-from ui.banner import (box_line_downwards, box_line_upwards, result_banner,
-                       show_line)
-from ui.colors import GREEN, MAGENTA, RED, RESET, YELLOW
-from utils.average import calculate_average
+from src.helper.database import DATA_FILE
+from src.ui.banner import box_line_downwards, box_line_upwards, result_banner, show_line
+from src.ui.colors import GREEN, MAGENTA, RED, RESET, YELLOW
+from src.utils.average import calculate_average
 
 
 def print_result(student_data, name):
@@ -35,7 +35,7 @@ def print_result(student_data, name):
 
 
 def check_result():
-    with open("database/data.json") as file:
+    with DATA_FILE.open() as file:
         student_data = json.load(file)
     # result_banner()
     show_line()

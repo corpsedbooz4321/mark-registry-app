@@ -1,7 +1,7 @@
 # All the banners are here.
 
 
-from ui.colors import MAGENTA, RESET
+from src.ui.colors import MAGENTA, RESET
 
 
 def show_banner():

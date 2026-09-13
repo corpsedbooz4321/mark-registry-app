@@ -1,14 +1,17 @@
 # main.py
-from features.check import check_result
-from features.delete_entry import remove
-from features.instructions import instruction
-from features.update import update_result
-from features.view_all import view_data
-from ui.banner import show_banner, show_line
-from ui.colors import GREEN, RED, RESET, YELLOW
+from src.features.check import check_result
+from src.features.delete_entry import remove
+from src.features.instructions import instruction
+from src.features.update import update_result
+from src.features.view_all import view_data
+from src.helper.setup_dirs import setup_missing_dirs
+from src.ui.banner import show_banner, show_line
+from src.ui.colors import GREEN, RED, RESET, YELLOW
 
 show_banner()
 show_line()
+
+setup_missing_dirs()
 
 
 def menu():

@@ -1,8 +1,9 @@
 # Script that holds the fuction removes or deletes the entry!!
 import json
 
-from ui.banner import box_line_downwards, box_line_upwards, show_line
-from ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
+from src.helper.database import DATA_FILE
+from src.ui.banner import box_line_downwards, box_line_upwards, show_line
+from src.ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
 
 
 def clean_empty_student(data, name):
@@ -17,7 +18,7 @@ def clean_empty_student(data, name):
             if choice == "y":
                 del data[name]
                 print(f"{GREEN}Student {BLUE}{name}{RESET} deleted successfully!!")
-                with open("database/data.json", "w") as file:
+                with DATA_FILE.open("w") as file:
                     json.dump(data, file, indent=2)
                 return True
             elif choice == "n":
@@ -40,7 +41,7 @@ def display_student(data, name):
 
 def remove():
     show_line(2)
-    with open("database/data.json") as file:
+    with DATA_FILE.open() as file:
         data = json.load(file)
     while True:
         name = input(f"\n{YELLOW}Enter your name: {RESET}")
@@ -65,7 +66,7 @@ def remove():
             if subject_removal == "q":
                 return
             if subject_removal == "done":
-                with open("database/data.json", "w") as file:
+                with DATA_FILE.open("w") as file:
                     json.dump(data, file, indent=2)
                 print(f"{GREEN}Changes saved successfully!!{RESET}")
                 # display_student(data, name)
