@@ -1,8 +1,5 @@
-# check.py
-import json
-
-from src.helper.database import DATA_FILE
-from src.ui.banner import box_line_downwards, box_line_upwards, result_banner, show_line
+# Printing results
+from src.ui.banner import box_line_downwards, box_line_upwards
 from src.ui.colors import GREEN, MAGENTA, RED, RESET, YELLOW
 from src.utils.average import calculate_average
 
@@ -31,24 +28,3 @@ def print_result(student_data, name):
     else:
         print(f"  {GREEN}{avg:<17}{RESET}{col.center(1)}{RED}{average:>17}{RESET}%")
     box_line_upwards()
-    return
-
-
-def check_result():
-    with DATA_FILE.open() as file:
-        student_data = json.load(file)
-    # result_banner()
-    show_line()
-    while True:
-        name = input(f"\n{YELLOW}Enter your name('q' for main Menu): {RESET}").lower()
-        if name == "q":
-            return
-
-        if not name.replace(" ", "").isalpha():
-            print(f"{RED}Invalid Name!, Use Non-numeric names!{RESET}")
-            continue
-
-        if name in student_data:
-            print_result(student_data, name)
-        else:
-            print(f"{RED}No results found with the given name!{RESET}")

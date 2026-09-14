@@ -3,8 +3,8 @@ import json
 
 from src.features.delete_entry import display_student
 from src.helper.database import DATA_FILE
-from src.ui.banner import show_line, update_banner
-from src.ui.colors import BLUE, GREEN, MAGENTA, RED, RESET, YELLOW
+from src.ui.banner import show_line
+from src.ui.colors import BLUE, GREEN, RED, RESET, YELLOW
 
 
 def update_result():
@@ -41,7 +41,6 @@ def update_result():
                 print(f"{subject}, {RED}Invalid subject name..{RESET}")
                 continue
             while True:
-
                 try:
                     mark = int(input(f"{YELLOW}Enter marks: {RESET}"))
 
