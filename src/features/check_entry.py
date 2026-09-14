@@ -1,4 +1,4 @@
-# check.py
+# check_entry.py
 import json
 
 from src.features.diplay_results import print_result
