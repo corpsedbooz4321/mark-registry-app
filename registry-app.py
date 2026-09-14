@@ -1,9 +1,9 @@
 # main.py
-from src.features.check import check_result
+from src.features.check_entry import check_result
 from src.features.delete_entry import remove
 from src.features.instructions import instruction
-from src.features.update import update_result
-from src.features.view_all import view_data
+from src.features.update_result import update_result
+from src.features.view_data import view_data
 from src.helper.setup_dirs import setup_missing_dirs
 from src.ui.banner import show_banner, show_line
 from src.ui.colors import GREEN, RED, RESET, YELLOW
